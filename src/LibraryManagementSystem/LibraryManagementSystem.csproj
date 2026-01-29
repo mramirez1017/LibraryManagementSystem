@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>LibraryManagementSystem</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryManagementSystem.Core\LibraryManagementSystem.Core.csproj" />
+    <ProjectReference Include="..\LibraryManagementSystem.Infrastructure\LibraryManagementSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\LibraryManagementSystem.Services\LibraryManagementSystem.Services.csproj" />
+  </ItemGroup>
+
+</Project>
