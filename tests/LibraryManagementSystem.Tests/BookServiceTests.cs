@@ -1,4 +1,5 @@
 using LibraryManagementSystem.Core.Models;
+using LibraryManagementSystem.Core.Repositories;
 using LibraryManagementSystem.Infrastructure.Repositories;
 using LibraryManagementSystem.Services;
 using Xunit;
