@@ -14,17 +14,13 @@ public class InMemoryBookRepository : IBookRepository
     private int _nextId = 1;
     private readonly object _idLock = new();
 
-    /// <inheritdoc />
     public IEnumerable<Book> GetAll() => _books.Values.OrderBy(b => b.Id).ToList();
 
-    /// <inheritdoc />
     public Book? GetById(int id) => _books.TryGetValue(id, out var book) ? book : null;
 
-    /// <inheritdoc />
     public Book? GetByIsbn(string isbn) =>
         _books.Values.FirstOrDefault(b => string.Equals(b.Isbn, isbn, StringComparison.OrdinalIgnoreCase));
 
-    /// <inheritdoc />
     public Book Add(Book book)
     {
         int id;
@@ -45,7 +41,6 @@ public class InMemoryBookRepository : IBookRepository
         return newBook;
     }
 
-    /// <inheritdoc />
     public bool Update(Book book)
     {
         if (!_books.ContainsKey(book.Id))
@@ -55,6 +50,5 @@ public class InMemoryBookRepository : IBookRepository
         return true;
     }
 
-    /// <inheritdoc />
     public bool Delete(int id) => _books.TryRemove(id, out _);
 }

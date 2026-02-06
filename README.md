@@ -26,7 +26,8 @@ dotnet test tests/LibraryManagementSystem.Tests/LibraryManagementSystem.Tests.cs
 LibraryManagementSystem/
 ├── src/
 │   ├── LibraryManagementSystem/           # Console application (entry point)
-│   │   └── Program.cs                     # Menu and user interaction
+│   │   ├── Program.cs                     # DI setup, launches ConsoleUI
+│   │   └── ConsoleUI.cs                   # Menu and user interaction
 │   ├── LibraryManagementSystem.Core/      # Domain and contracts
 │   │   ├── Models/
 │   │   │   └── Book.cs                    # Book entity
@@ -58,7 +59,7 @@ LibraryManagementSystem/
   - **ISBN-13 validation**: exactly 13 digits (hyphens allowed) and correct check digit.
   - Duplicate ISBN check on add/update.
   - Required title and author.
-- **Console app** is the composition root: it instantiates the concrete repository and service and handles menu I/O only.
+- **Console app** uses Microsoft.Extensions.DependencyInjection: `Program.cs` registers services (no direct instantiation) and launches `ConsoleUI`, which handles all menu I/O.
 
 ### Repository Pattern
 

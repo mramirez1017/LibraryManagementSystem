@@ -16,13 +16,10 @@ public class BookService : IBookService
         _bookRepository = bookRepository ?? throw new ArgumentNullException(nameof(bookRepository));
     }
 
-    /// <inheritdoc />
     public IEnumerable<Book> GetAllBooks() => _bookRepository.GetAll();
 
-    /// <inheritdoc />
     public Book? GetBookById(int id) => _bookRepository.GetById(id);
 
-    /// <inheritdoc />
     public Book? AddBook(string isbn, string title, string author, int? yearPublished, out string? errorMessage)
     {
         errorMessage = null;
@@ -63,7 +60,6 @@ public class BookService : IBookService
         return _bookRepository.Add(book);
     }
 
-    /// <inheritdoc />
     public bool UpdateBook(int id, string isbn, string title, string author, int? yearPublished, out string? errorMessage)
     {
         errorMessage = null;
@@ -109,7 +105,6 @@ public class BookService : IBookService
         return _bookRepository.Update(existing);
     }
 
-    /// <inheritdoc />
     public bool DeleteBook(int id, out string? errorMessage)
     {
         errorMessage = null;
