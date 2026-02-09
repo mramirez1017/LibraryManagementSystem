@@ -4,10 +4,7 @@ using LibraryManagementSystem.Core.Repositories;
 
 namespace LibraryManagementSystem.Infrastructure.Repositories;
 
-/// <summary>
-/// In-memory implementation of <see cref="IBookRepository"/>.
-/// Uses a thread-safe dictionary keyed by book ID for storage.
-/// </summary>
+/// In-memory implementation of IBookRepository. Uses a thread-safe dictionary keyed by book ID for storage.
 public class InMemoryBookRepository : IBookRepository
 {
     private readonly ConcurrentDictionary<int, Book> _books = new();

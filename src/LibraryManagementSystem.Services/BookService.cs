@@ -3,10 +3,7 @@ using LibraryManagementSystem.Core.Repositories;
 
 namespace LibraryManagementSystem.Services;
 
-/// <summary>
-/// Service layer for book operations. Handles business logic and validation,
-/// delegating data access to the repository.
-/// </summary>
+/// Service layer for book operations. Handles business logic and validation, delegating data access to the repository.
 public class BookService : IBookService
 {
     private readonly IBookRepository _bookRepository;

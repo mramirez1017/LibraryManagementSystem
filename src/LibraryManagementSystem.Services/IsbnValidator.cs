@@ -1,17 +1,9 @@
 namespace LibraryManagementSystem.Services;
 
-/// <summary>
-/// Validates ISBN-13 format (13 digits, with optional hyphens).
-/// Validates the check digit using the ISBN-13 algorithm.
-/// </summary>
+/// Validates ISBN-13 format (13 digits, with optional hyphens). Validates the check digit using the ISBN-13 algorithm.
 public static class IsbnValidator
 {
-    /// <summary>
-    /// Validates that the string is a valid 13-digit ISBN (ISBN-13).
-    /// Accepts digits only or digits with hyphens (e.g. 978-0-13-235088-4).
-    /// </summary>
-    /// <param name="isbn">The ISBN string to validate.</param>
-    /// <returns>True if valid; otherwise false.</returns>
+    /// Validates that the string is a valid 13-digit ISBN (ISBN-13). Accepts digits only or digits with hyphens (e.g. 978-0-13-235088-4).
     public static bool IsValidIsbn13(string? isbn)
     {
         if (string.IsNullOrWhiteSpace(isbn))
@@ -38,9 +30,7 @@ public static class IsbnValidator
         return checkDigit == (digits[12] - '0');
     }
 
-    /// <summary>
     /// Normalizes ISBN to digits only (no hyphens) for storage/comparison.
-    /// </summary>
     public static string NormalizeIsbn(string isbn) =>
         string.Concat(isbn.Where(char.IsDigit));
 }
